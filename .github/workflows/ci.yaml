@@ -1,0 +1,13 @@
+name: ci
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: build
+        run: make release
+        env:
+          ISOLATED: y
